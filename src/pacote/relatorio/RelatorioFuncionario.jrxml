@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c41e94d0-1856-47fa-9d1d-06ef6a083a30">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="19"/>
+	<queryString>
+		<![CDATA[SELECT
+     funcionario."nome" AS funcionario_nome,
+     funcionario."cpf" AS funcionario_cpf,
+     funcionario."endereco" AS funcionario_endereco,
+     funcionario."cidade" AS funcionario_cidade,
+     funcionario."uf" AS funcionario_uf,
+     funcionario."cargo" AS funcionario_cargo,
+     funcionario."datacontratacao" AS funcionario_datacontratacao,
+     funcionario."salario" AS funcionario_salario
+FROM
+     "public"."funcionario" funcionario]]>
+	</queryString>
+	<field name="funcionario_nome" class="java.lang.String"/>
+	<field name="funcionario_cpf" class="java.lang.String"/>
+	<field name="funcionario_endereco" class="java.lang.String"/>
+	<field name="funcionario_cidade" class="java.lang.String"/>
+	<field name="funcionario_uf" class="java.lang.String"/>
+	<field name="funcionario_cargo" class="java.lang.String"/>
+	<field name="funcionario_datacontratacao" class="java.sql.Date"/>
+	<field name="funcionario_salario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="11" width="301" height="49" forecolor="#A533CC" uuid="c4084bea-efa3-413b-9b83-f49f5ed9c980"/>
+				<textElement textAlignment="Center">
+					<font fontName="Perpetua" size="28" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Relatório Funcionário]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="0" width="150" height="79" uuid="6331ac6d-763e-4135-86fc-2d8179875aeb"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Prova - 3\\Prova 3 (pronto)\\Prova3-Academia\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="405" y="6" width="126" height="20" uuid="27b06e27-dda6-4e51-9256-b49e528501ad"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="168" y="35" width="64" height="20" uuid="66951eae-26a6-40c6-8f70-bda0644d6a55"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="35" width="73" height="20" uuid="d8c0f4a3-a770-415c-8dee-83b7e6eb0523"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="35" width="113" height="20" uuid="6062305b-4998-4d34-8483-28eab74d0492"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de contratação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="35" width="66" height="20" uuid="ae83b1f2-3a49-4e73-8cba-bff66179ffdc"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="35" width="49" height="20" uuid="b84f0282-3da0-49cd-9543-6f98a152d98d"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="35" width="105" height="20" uuid="020bc3e2-3bf5-44d9-958c-87dae0990005"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="5" width="66" height="20" uuid="bb054173-f7e9-409e-ab9e-855b188b2e5f"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="5" width="73" height="20" uuid="ff77da90-0666-4af9-b05b-16bfe9620f8a"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="5" width="64" height="20" uuid="a8ff86dc-32b9-4124-9bf7-4a91eaac3e58"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="5" width="113" height="20" uuid="34847920-9fdf-435d-ae8d-4cd2de023f0a"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_datacontratacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="5" width="49" height="20" uuid="8972a56c-fbd3-4a7a-9217-546cef0a2875"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_salario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="5" width="105" height="20" uuid="db904ccf-0ca2-4108-8872-68e403557b48"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcionario_endereco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="498" y="28" width="40" height="20" uuid="37311ef5-2abc-43b9-a0c0-aefd436e88a0"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="28" width="80" height="20" uuid="1281ff2f-13a0-476e-bf49-988940f0c21d"/>
+				<textElement textAlignment="Right">
+					<font fontName="Perpetua" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

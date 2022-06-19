@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a99ff08-b11e-4088-8007-dd3ebf746e3e">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     cliente."nome" AS cliente_nome,
+     cliente."cpf" AS cliente_cpf,
+     cliente."endereco" AS cliente_endereco,
+     cliente."bairro" AS cliente_bairro,
+     cliente."cidade" AS cliente_cidade,
+     cliente."uf" AS cliente_uf,
+     cliente."telefone" AS cliente_telefone,
+     cliente."restricao" AS cliente_restricao
+FROM
+     "public"."cliente" cliente]]>
+	</queryString>
+	<field name="cliente_nome" class="java.lang.String"/>
+	<field name="cliente_cpf" class="java.lang.String"/>
+	<field name="cliente_endereco" class="java.lang.String"/>
+	<field name="cliente_bairro" class="java.lang.String"/>
+	<field name="cliente_cidade" class="java.lang.String"/>
+	<field name="cliente_uf" class="java.lang.String"/>
+	<field name="cliente_telefone" class="java.lang.String"/>
+	<field name="cliente_restricao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="222" y="13" width="301" height="49" forecolor="#921FDF" uuid="77011a8a-b3fd-4af9-93d0-0a8ccb38b2d8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Perpetua" size="28" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Relatório Cliente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="4" y="0" width="128" height="79" uuid="bebd8ee5-9f8c-49bc-9625-a8e8f60d6b14"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Prova - 3\\Prova 3 (pronto)\\Prova3-Academia\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="410" y="6" width="126" height="20" uuid="455bb503-9322-4ed6-a427-eb2d8ec69380"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="198" y="38" width="86" height="20" uuid="2425d1ea-7877-4e63-8145-b604d53b3bbe"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="38" width="47" height="20" uuid="de7a536d-946a-4a68-8b75-ecb1fe1788e4"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="38" width="96" height="20" uuid="86ab0017-008b-4a8a-a760-16e527563b3e"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="38" width="65" height="20" uuid="3a9c28f5-6473-40a1-9ce9-59415e5e01f3"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Restrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="38" width="77" height="20" uuid="ddf73103-2e42-4783-8c79-cf3d3c753831"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="38" width="90" height="20" uuid="56e1c6bc-1da2-40c4-b293-21314caa4444"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="4" width="96" height="20" uuid="3e897a4f-de8a-4497-b915-2623f4ad2372"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="199" y="4" width="86" height="20" uuid="5e6214f5-3669-45c1-8a9b-133f3b3203a1"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="4" width="77" height="20" uuid="2c4aac5c-7ab4-4250-bcaf-07c00fe351bd"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="4" width="47" height="20" uuid="3539008d-4d4b-41b2-ae55-b4e07c56b8f3"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="4" width="63" height="20" uuid="82a18d8b-d744-4df9-9e7b-6fd12e290958"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_restricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="4" width="88" height="20" uuid="ec079ade-efab-4274-b50d-ce577ee8afa7"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_endereco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="419" y="25" width="80" height="20" uuid="629bbaa9-cc6c-4273-9d15-5ccad75463c0"/>
+				<textElement textAlignment="Right">
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="499" y="25" width="40" height="20" uuid="679307f1-3c6d-4a65-8596-f2daf5875ba1"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

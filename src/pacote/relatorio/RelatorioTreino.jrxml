@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="424ef391-4804-4b1a-be58-e9f0b006c553">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     treino."nomecliente" AS treino_nomecliente,
+     treino."numerotreino" AS treino_numerotreino,
+     treino."nomepersonal" AS treino_nomepersonal,
+     treino."datatreino" AS treino_datatreino,
+     treino."pretreino" AS treino_pretreino,
+     treino."tempopre" AS treino_tempopre,
+     treino."postreino" AS treino_postreino,
+     treino."tempopos" AS treino_tempopos,
+     treino."grupomuscular" AS treino_grupomuscular,
+     treino."serie" AS treino_serie,
+     treino."repeticao" AS treino_repeticao,
+     treino."intervalo" AS treino_intervalo,
+     treino."horainicio" AS treino_horainicio,
+     treino."horafim" AS treino_horafim
+FROM
+     "public"."treino" treino]]>
+	</queryString>
+	<field name="treino_nomecliente" class="java.lang.String"/>
+	<field name="treino_numerotreino" class="java.lang.String"/>
+	<field name="treino_nomepersonal" class="java.lang.String"/>
+	<field name="treino_datatreino" class="java.sql.Date"/>
+	<field name="treino_pretreino" class="java.lang.String"/>
+	<field name="treino_tempopre" class="java.lang.String"/>
+	<field name="treino_postreino" class="java.lang.String"/>
+	<field name="treino_tempopos" class="java.lang.String"/>
+	<field name="treino_grupomuscular" class="java.lang.String"/>
+	<field name="treino_serie" class="java.lang.String"/>
+	<field name="treino_repeticao" class="java.lang.String"/>
+	<field name="treino_intervalo" class="java.lang.String"/>
+	<field name="treino_horainicio" class="java.lang.String"/>
+	<field name="treino_horafim" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="11" width="301" height="49" forecolor="#8C19B2" uuid="c08bed1e-9d5d-46c0-977d-51cc38da9e98"/>
+				<textElement textAlignment="Center">
+					<font fontName="Perpetua" size="28" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Relatório Treino]]></text>
+			</staticText>
+			<image>
+				<reportElement x="27" y="11" width="115" height="61" uuid="48f9e826-6ae3-42e9-94ba-496f91d2d80f"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Prova - 3\\Prova 3 (pronto)\\Prova3-Academia\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="405" y="4" width="126" height="20" uuid="5fccff16-fd62-46fb-87aa-9ff4fe94d00b"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="105" y="38" width="103" height="20" uuid="90fd183d-14e1-4c56-bef5-cd434d97dc29"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do personal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="38" width="74" height="20" uuid="4fbb20b8-1ee5-415b-b9b2-cf3b09870ec5"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº do treino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="38" width="94" height="20" uuid="07bea956-bf0d-43db-ba31-4071709ddc2c"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="38" width="83" height="20" uuid="b1d077f3-bacc-4b50-bfa6-fd421ee6433b"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do treino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="38" width="80" height="20" uuid="206f99d9-8d45-44c3-b5c8-f77e68fba9e6"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora de inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="38" width="89" height="20" uuid="ab94b7e3-982b-4975-9d1d-b367f939d9d5"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora de termino]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="4" width="94" height="20" uuid="b5d5cfaf-17f8-493f-9293-cb15623b94f7"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_nomecliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="4" width="101" height="20" uuid="d82929f9-8fda-42d0-94a2-a8f73d57434b"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_nomepersonal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="4" width="81" height="20" uuid="452b852e-c60e-497b-9d90-294713bfb7dd"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_datatreino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="4" width="77" height="20" uuid="23fd3c54-2509-44d4-919f-c8df926f0c97"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_horainicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="4" width="89" height="20" uuid="42a2340d-643c-4168-9f9d-a4711591699e"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_horafim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="4" width="72" height="20" uuid="aaf40f2d-6f1c-47ec-bdda-c6f73c70dd92"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{treino_numerotreino}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="502" y="23" width="40" height="20" uuid="7917cb4c-0b3c-4cc9-af54-abbedf114812"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="23" width="80" height="20" uuid="db4a5491-c114-4656-bbdf-a5e436d5b55e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

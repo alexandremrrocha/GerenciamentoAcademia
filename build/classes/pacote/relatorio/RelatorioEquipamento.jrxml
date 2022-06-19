@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11f039d5-312a-462f-be38-550b329d65ba">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     equipamento."codigo" AS equipamento_codigo,
+     equipamento."nome" AS equipamento_nome,
+     equipamento."fornecedor" AS equipamento_fornecedor,
+     equipamento."datacompra" AS equipamento_datacompra,
+     equipamento."quantidade" AS equipamento_quantidade,
+     equipamento."valor" AS equipamento_valor,
+     equipamento."limitepeso" AS equipamento_limitepeso
+FROM
+     "public"."equipamento" equipamento]]>
+	</queryString>
+	<field name="equipamento_codigo" class="java.lang.String"/>
+	<field name="equipamento_nome" class="java.lang.String"/>
+	<field name="equipamento_fornecedor" class="java.lang.String"/>
+	<field name="equipamento_datacompra" class="java.sql.Date"/>
+	<field name="equipamento_quantidade" class="java.lang.String"/>
+	<field name="equipamento_valor" class="java.lang.String"/>
+	<field name="equipamento_limitepeso" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="13" width="301" height="49" forecolor="#921FDF" uuid="7ede4dd8-995a-4e79-92d2-9b0fb8ea4068"/>
+				<textElement textAlignment="Center">
+					<font fontName="Perpetua" size="28" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Relatório Equipamento]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="142" height="79" uuid="616e9b8f-ee5b-4e01-936f-4fdec5f55dcf"/>
+				<imageExpression><![CDATA["D:\\FACULDADE\\4° - Periodo\\POE\\Prova - 3\\Prova 3 (pronto)\\Prova3-Academia\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="406" y="8" width="126" height="20" uuid="b00c3c2c-1c62-45ab-818a-d72a3af35fa6"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="31" width="45" height="20" uuid="8783d7af-43cf-4f2c-b2dd-cf5d27e82ae4"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="31" width="56" height="20" uuid="a2259cfe-3327-4d43-aa0f-9f266175fce8"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="31" width="86" height="20" uuid="4afdb0a4-7b51-450d-87bc-2b620c70caad"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fornecedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="31" width="61" height="20" uuid="da68cff4-18f8-49bf-968e-e273a46bf294"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="31" width="72" height="20" uuid="c9a70a92-b91e-4e43-baad-22f0ce6ecd6d"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Limite de peso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="31" width="81" height="20" uuid="d3e5995b-310b-49e5-a276-180c8c3be8fd"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data da compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="31" width="54" height="20" uuid="766d8c0b-76a9-40dc-83ac-2dafb6161726"/>
+				<textElement>
+					<font fontName="Perpetua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="4" width="46" height="20" uuid="75ddc832-59b7-4704-9f71-56a862f756e3"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="4" width="56" height="20" uuid="38bbbdbe-a98b-4688-85b7-44364f790048"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="4" width="86" height="20" uuid="c58c2f14-8b42-4380-a267-1f72a250bad0"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_fornecedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="4" width="61" height="20" uuid="8dd88901-0135-45eb-ba57-af6fc0b76a07"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="4" width="72" height="20" uuid="9d116b5b-1ff7-48d5-90af-14f50367bad6"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_limitepeso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="4" width="49" height="20" uuid="f4af0233-70b0-4f15-8f19-34294ffbbcd5"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_datacompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="4" width="54" height="20" uuid="270b2b7f-1311-4588-9793-7b717512961a"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento_valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="423" y="30" width="80" height="20" uuid="d845d93b-062e-41ce-9e6a-17f0ff5c2938"/>
+				<textElement textAlignment="Right">
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="503" y="30" width="40" height="20" uuid="32536c35-aa6c-428d-94d4-078bf003b6c8"/>
+				<textElement>
+					<font fontName="Perpetua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
